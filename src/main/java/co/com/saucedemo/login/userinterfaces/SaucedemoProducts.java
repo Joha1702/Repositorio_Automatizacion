@@ -6,6 +6,6 @@ import net.serenitybdd.screenplay.targets.Target;
 
 public class SaucedemoProducts {
 	
-	public static final Target URL_TEXT = Target.the("Url Text").located(By.id(""));
+	public static final Target TARGET_PRODUCTS = Target.the("Target Products").locatedBy("//span[@class='title']");
 
 }

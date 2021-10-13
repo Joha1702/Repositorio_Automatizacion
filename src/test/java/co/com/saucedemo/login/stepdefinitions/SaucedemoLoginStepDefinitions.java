@@ -1,7 +1,9 @@
 package co.com.saucedemo.login.stepdefinitions;
 
+import org.hamcrest.Matchers;
 import org.openqa.selenium.WebDriver;
 
+import co.com.saucedemo.login.questions.VerProductos;
 import co.com.saucedemo.login.tasks.OpenTheBrowser;
 import co.com.saucedemo.login.tasks.Write;
 import co.com.saucedemo.login.userinterfaces.SaucedemoHomePage;
@@ -43,9 +45,9 @@ public class SaucedemoLoginStepDefinitions {
 		
 	}
 
-	@Then("^she should see the url https://www\\.saucedemo\\.com/inventory\\.html in the screen$")
-	public void sheShouldSeeTheUrlHttpsWwwSaucedemoComInventoryHtmlInTheScreen() throws Exception {
-		leidy.should(GivenWhenThen.seeThat(actual, expectedMatchers));
+	@Then("^she should see the word (.*) in the screen$")
+	public void sheShouldSeeTheWordPRODUCTSInTheScreen(String word) throws Exception {
+		leidy.should(GivenWhenThen.seeThat(VerProductos.TextoProducto(), Matchers.comparesEqualTo(word)));
 
 	}
 
