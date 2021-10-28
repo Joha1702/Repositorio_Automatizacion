@@ -1,7 +1,6 @@
 package co.com.saucedemo.login.tasks;
 
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
@@ -10,19 +9,17 @@ import static net.serenitybdd.screenplay.Tasks.instrumented;
 
 import co.com.saucedemo.login.userinterfaces.SaucedemoComponent;;
 
-public class Write implements Task{
+public class Login implements Task {
 
 	@Override
 	public <T extends Actor> void performAs(T actor) {
-		actor.attemptsTo(Enter.theValue("standard_user").into(SaucedemoComponent.USERNAME_TEXTAREA),
-				Enter.theValue("secret_sauce").into(SaucedemoComponent.PASSWORD_TEXTAREA),
-				Click.on(SaucedemoComponent.LOGIN_BUTTON));
-		
+		actor.attemptsTo(Enter.theValue("standard_user").into(SaucedemoComponent.TXT_USERNAME),
+				Enter.theValue("secret_sauce").into(SaucedemoComponent.TXT_PASSWORD),
+				Click.on(SaucedemoComponent.BTN_lOGIN));
 	}
 
-	public static Write Elements() {
-		
-		return instrumented(Write.class);
+	public static Login InPage() {
+		return instrumented(Login.class);
 	}
 
 }
