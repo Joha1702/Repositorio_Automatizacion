@@ -1,4 +1,4 @@
-#Author: your.email@your.domain.com
+#Author: leidymoreno17@gmail.com
 
 Feature: Login
   As a web user
@@ -9,7 +9,4 @@ Feature: Login
   Scenario: login in to the saucedemo website
     Given that leidy want to access to saucedemo website
     When she login to the page
-    Then she should see the word PRODUCTS in the screen
-
-
-
+    Then she should see the word PRODUCTS in the screen   
